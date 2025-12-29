@@ -14,9 +14,8 @@ app.get('/health', (req, res) => {
 // Start server and keep it running
 app.listen(PORT, () => {
   console.log(`HTTP wrapper running on port ${PORT}`);
-  
-  // Start the MCP server
-  require('./build/todo-index.js');
+  // Start the MCP server using dynamic import for ES modules
+  import('./build/todo-index.js');
 });
 
 // Keep process alive
